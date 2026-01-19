@@ -47,7 +47,7 @@ function Login({ setAuthView }) {
         <div className=" w-full bg-white rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8 relative">
 
-            <h1 className="text-xl lg:text-3xl  font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+            <h1 className="text-xl lg:text-2xl  font-bold leading-tight tracking-tight text-gray-900 md:text-xl dark:text-white">
               Log in to your account
             </h1>
 
@@ -55,28 +55,28 @@ function Login({ setAuthView }) {
 
               {/* Email */}
               <div>
-                <label className="block lg:text-xl mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                <label className="block lg:text-lg mb-2 text-sm font-medium text-gray-900 dark:text-white">
                   Your email
                 </label>
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="lg:text-xl  bg-gray-50 border border-gray-300 rounded-lg block w-full p-2.5"
+                  className="lg:text-md  bg-gray-50 border border-gray-300 rounded-lg block w-full p-2.5"
                   placeholder="name@company.com"
                 />
               </div>
 
               {/* Password */}
               <div>
-                <label className="block lg:text-xl  mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                <label className="block lg:text-lg  mb-2 text-sm font-medium text-gray-900 dark:text-white">
                   Password
                 </label>
                 <input
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="bg-gray-50 lg:text-lg  border border-gray-300 rounded-lg block w-full p-2.5"
+                  className="bg-gray-50 lg:text-md  border border-gray-300 rounded-lg block w-full p-2.5"
                   placeholder="••••••••"
                 />
               </div>
@@ -84,7 +84,7 @@ function Login({ setAuthView }) {
               {/* Sign in */}
               <button
                 type="button"
-                className=" lg:text-xl  w-full bg-blue-500 text-white rounded-lg py-2"
+                className=" lg:text-lg  w-full bg-blue-500 text-white rounded-lg py-2"
                 onClick={() => handleLogin()}
               >
                 Log in
@@ -93,18 +93,18 @@ function Login({ setAuthView }) {
               {/* Close */}
               <button
                 type="button"
-                className=" lg:text-xl w-full bg-red-600 text-white rounded-lg py-2"
+                className=" lg:text-lg w-full bg-red-600 text-white rounded-lg py-2"
                 onClick={() => setAuthView(null)}
               >
                 Close
               </button>
 
               {/* Switch to Register */}
-              <p className=" lg:text-xl text-sm text-gray-500 text-center">
+              <p className=" lg:text-lg text-sm text-gray-500 text-center">
                 Don’t have an account?{" "}
                 <button
                   type="button"
-                  className=" lg:text-xl  text-blue-500 font-medium"
+                  className=" lg:text-lg  text-blue-500 font-medium"
                   onClick={() => setAuthView("register")}
                 >
                   Sign up

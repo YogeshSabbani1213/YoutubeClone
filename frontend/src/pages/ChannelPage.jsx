@@ -109,8 +109,8 @@ function ChannelPage() {
                 {/* TABS */}
                 <div className="border-b border-gray-200 mb-6">
                     <nav className="flex space-x-8">
-                        <button className="lg:text-2xl border-b-2 border-black pb-4 text-sm font-bold uppercase">Videos</button>
-                        <button className="lg:text-2xl text-gray-500 pb-4 text-sm font-medium uppercase hover:text-black">About</button>
+                        <button className="lg:text-md border-b-2 border-black pb-4 text-sm font-bold uppercase">Videos</button>
+                        <button className="lg:text-md text-gray-500 pb-4 text-sm font-medium uppercase hover:text-black">About</button>
                     </nav>
                 </div>
 

@@ -164,7 +164,7 @@ function VideoPlayer() {
     return <p className="p-10 text-center">loading....</p>;
   }
   return (
-    <div className=" flex flex-col lg:flex-row gap-6 px-2 px-3 lg:px-4 lg:py-6 lg:max-w-10xl lg:mx-10 ">
+    <div className=" flex flex-col lg:flex-row gap-6 px-2 lg:px-4 lg:py-6 lg:max-w-10xl lg:mx-10 ">
       <div className="lg:flex-1 lg:max-w-[calc(100%-100px)]">
         {/* Video */}
         <video
@@ -175,20 +175,20 @@ function VideoPlayer() {
         />
         <div className=" flex flex-col gap-0.5  ">
           {/* Title */}
-          <h1 className="lg:text-3xl sm:text-2xl md:text-3xl ml-1 text-gray-900 text-xl font-semibold mt-2">
+          <h1 className="lg:text-xl sm:text-2xl md:text-xl ml-1 text-gray-900 text-xl font-semibold mt-2">
             {video.title}
           </h1>
 
           <div className="  ml-1 flex justify-start items-center gap-3">
             {/* Channel */}
             <Link to={`/channel/${video.channel._id}`}>
-              <p className="sm:text-lg lg:text-xl md:text-md text-gray-600 text-sm">
+              <p className="sm:text-lg lg:text-lg md:text-md text-gray-600 text-sm">
                 @{video.channel?.channelName || "Unknown Channel"} •
               </p>
             </Link>
 
             {/* views */}
-            <p className="lg:text-xl sm:text-lg md:text-md text-gray-600 text-sm">{video.views} views</p>
+            <p className="lg:text-lg sm:text-lg md:text-md text-gray-600 text-sm">{video.views} views</p>
           </div>
 
           {/*like share download buttons */}
@@ -196,15 +196,15 @@ function VideoPlayer() {
             <img
               src={video.uploader?.avatar || "https://via.placeholder.com/150"}
               alt=""
-              className="lg:w-18 w-9 ml-1 rounded-full object-cover h-9 lg:h-16"
+              className="lg:w-12 w-9 ml-1 rounded-full object-cover h-9 lg:h-auto"
             />
 
-            <button className="flex items-center text-sm lg:text-xl gap-2 px-3 lg:py-1  bg-gray-950 text-white rounded-2xl">
+            <button className=" text-sm lg:text-sm gap-1 px-2  bg-gray-950 text-white rounded-2xl">
               Subscribe
             </button>
             <button
               onClick={handleLike}
-              className={`lg:text-xl px-3 flex justify-center items-center rounded-xl ${userLiked ? "bg-black text-white" : "bg-gray-100"
+              className={`lg:text-lg px-3 flex justify-center items-center rounded-xl ${userLiked ? "bg-black text-white" : "bg-gray-100"
                 }`}
             >
               <FontAwesomeIcon icon={faThumbsUp} />
@@ -213,39 +213,39 @@ function VideoPlayer() {
 
             <button
               onClick={handleDislike}
-              className={`lg:text-xl px-3 rounded-xl flex justify-center items-center ${userDisliked ? "bg-black text-white" : "bg-gray-100"
+              className={`lg:text-lg px-3 rounded-xl flex justify-center items-center ${userDisliked ? "bg-black text-white" : "bg-gray-100"
                 }`}
             >
               <FontAwesomeIcon icon={faThumbsDown} />
               <span className="py-0">{disLikes}</span>
             </button>
-            <button className="lg:text-xl flex items-center text-sm gap-2 px-3 py-0 bg-gray-100 rounded-2xl">
+            <button className="lg:text-lg flex items-center text-sm gap-2 px-3 py-0 bg-gray-100 rounded-2xl">
               <FontAwesomeIcon icon={faTelegram} />
-              <span className=" lg:text-xl py-0">share</span>
+              <span className=" lg:text-lg py-0">share</span>
             </button>
-            <button className="lg:text-xl flex items-center text-sm gap-2 px-3 py-0 bg-gray-100 rounded-2xl">
+            <button className="lg:text-lg flex items-center text-sm gap-2 px-3 py-0 bg-gray-100 rounded-2xl">
               <FontAwesomeIcon icon={faDownload} />
-              <span className="lg:text-xl py-0">Download</span>
+              <span className="lg:text-lg py-0">Download</span>
             </button>
           </div>
         </div>
 
         {/*description */}
-        <div className="mt-4 bg-gray-200 rounded-xl p-4 text-sm">
+        <div className="mt-4 bg-gray-200 rounded-xl border-b p-4 text-sm">
           {/* Views & Time */}
-          <div className="sm:text-lg md:text-xl lg:text-2xl font-semibold mb-2">
+          <div className="sm:text-lg md:text-md lg:text-lg font-semibold mb-2">
             {video.views} views · {timeAgo(video.createdAt)}
           </div>
 
           {/* Description */}
-          <p className={`${!expanded ? "sm:text-xl md:text-xl lg:text-xl line-clamp-3" : ""} whitespace-pre-line`}>
+          <p className={`${!expanded ? "sm:text-md md:text-lg lg:text-lg line-clamp-3" : ""} whitespace-pre-line`}>
             {video.description}
           </p>
 
           {/* View More / Less */}
           <button
             onClick={() => setExpanded(!expanded)}
-            className="mt-2 lg:text-2xl sm:text-lg md:text-md text-black "
+            className="mt-2 lg:text-lg sm:text-md md:text-md text-black "
           >
             {expanded ? "view less" : "view more.."}
           </button>
@@ -253,9 +253,9 @@ function VideoPlayer() {
 
         {/*comments */}
         <div className=" px-2 ">
-          <h1 className=" lg:text-3xl sm:text-xl md:text-2xl text-xl border-t mt-2 font-semibold mb-1 lg:mb-2">Comments</h1>
+          <h1 className=" lg:text-2xl sm:text-xl md:text-2xl text-xl  mt-2 font-semibold mb-1 lg:mb-2">Comments</h1>
           <div className="mb-2 flex gap-1 justify-center items-center">
-            <div className="w-7 h-7 sm:w-9 sm:h-9 lg:w-12 lg:h-12 rounded-full bg-purple-500 flex items-center justify-center text-white text-sm">
+            <div className="w-7 h-7 sm:w-9 sm:h-9 lg:w-10 lg:h-10 rounded-full bg-purple-500 flex items-center justify-center text-white text-sm">
               Y
             </div>
             <input
@@ -263,11 +263,11 @@ function VideoPlayer() {
               value={text}
               onChange={(e) => setText(e.target.value)}
               placeholder="write a comment"
-              className="border-2 sm:text-lg lg:text-2xl text-sm border-gray-300 outline-none flex-1 p-1 rounded-xl w-full mb-0"
+              className="border-2 sm:text-md lg:text-lg text-sm border-gray-300 outline-none flex-1 p-1 rounded-xl w-full mb-0"
             />
             <button
               onClick={addComment}
-              className="flex items-center text-sm sm:text-lg lg:text-2xl gap-2 px-3 py-2 bg-gray-100 rounded-xl"
+              className="flex items-center text-sm sm:text-md lg:text-lg gap-2 px-3 py-2 bg-gray-100 rounded-xl"
             >
               Add
             </button>
@@ -278,19 +278,19 @@ function VideoPlayer() {
               <img
                 src={cmmt.user.avatar || "default-avatar-url.png"}
                 alt="avatar"
-                className="w-9 h-9 sm:w-11 sm:h-11 lg:w-13 lg:h-13 rounded-full object-cover"
+                className="w-9 h-9 sm:w-11 sm:h-11 lg:w-11 lg:h-11 rounded-full object-cover"
               />
 
               {/* Comment Body */}
               <div className="flex-1">
                 {/* Username */}
-                <h1 className="text-sm sm:text-md lg:text-xl text-gray-800">
+                <h1 className="text-sm sm:text-md lg:text-md text-gray-800">
                   @{cmmt.user?.username} · {timeAgo(cmmt.createdAt)}
                 </h1>
                 <span></span>
 
                 {/* Comment Text */}
-                <p className="text-sm sm:text-lg md:text-lg lg:text-xl  text-black mt-0.5">
+                <p className="text-sm sm:text-lg md:text-md lg:text-sm  text-black mt-0.5">
                   {cmmt.text}
                 </p>
 
@@ -299,13 +299,13 @@ function VideoPlayer() {
                   <div className="flex gap-4 mt-1 text-xs text-blue-600">
                     <button
                       onClick={() => editComment(cmmt._id)}
-                      className="sm:text-md lg:text-xl hover:underline"
+                      className="sm:text-md lg:text-lg hover:underline"
                     >
                       Edit
                     </button>
                     <button
                       onClick={() => deleteComment(cmmt._id)}
-                      className=" sm:text-md lg:text-xl hover:underline"
+                      className=" sm:text-md lg:text-lg hover:underline"
                     >
                       Delete
                     </button>
@@ -318,21 +318,21 @@ function VideoPlayer() {
       </div>
       {/* RIGHT COLUMN (Sidebar) */}
       <div className="lg:w-250px  shrink-0">
-        <h2 className="font-semibold lg:text-3xl text-sm mb-4">Up next</h2>
+        <h2 className="font-semibold lg:text-2xl text-sm mb-4">Up next</h2>
         <div className="flex flex-col gap-3">
           {recommendations.map((rec) => (
             <Link to={`/videos/${rec._id}`} key={rec._id} className="flex gap-2 group">
               {/* Sidebar Thumbnail */}
-              <div className="w-40 h-24 lg:w-50 lg:h-auto shrink-0 rounded-lg overflow-hidden bg-gray-200">
+              <div className="w-40 h-24 lg:w-40 lg:h-auto shrink-0 rounded-lg overflow-hidden bg-gray-200">
                 <img src={rec.thumbnailUrl} className="w-full h-full object-cover" alt="thumbnail" loading="lazy" />
               </div>
               {/* Sidebar Video Info */}
               <div className="flex flex-col">
-                <h4 className="text-sm lg:text-xl font-semibold md:line-clamp-2 lg:line-clamp-1 leading-tight group-hover:text-blue-600">
+                <h4 className="text-sm lg:text-md font-semibold md:line-clamp-2 lg:line-clamp-1 leading-tight group-hover:text-blue-600">
                   {rec.title}
                 </h4>
-                <p className="text-xs lg:text-xl text-gray-500 mt-1">{rec.channel?.channelName}</p>
-                <p className="text-xs lg:text-lg text-gray-500">{rec.views} views • {timeAgo(rec.createdAt)}</p>
+                <p className="text-xs lg:text-md text-gray-500 mt-1">{rec.channel?.channelName}</p>
+                <p className="text-xs lg:text-md text-gray-500">{rec.views} views • {timeAgo(rec.createdAt)}</p>
               </div>
             </Link>
           ))}

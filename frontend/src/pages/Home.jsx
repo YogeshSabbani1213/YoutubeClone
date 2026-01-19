@@ -40,7 +40,7 @@ function Home() {
           <button
             key={cat}
             onClick={() => setCategory(cat)}
-            className={`px-3 py-1 md:text-md lg:text-xl rounded ${
+            className={`px-3 py-1 md:text-md lg:text-md rounded ${
               category === cat ? "bg-black text-white" : "bg-gray-100"
             }`}
           >

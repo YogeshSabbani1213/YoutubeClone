@@ -21,11 +21,7 @@ const CreateChannel = () => {
             }, {
                 headers: { Authorization: `Bearer ${token}` }
             });
-
-
             const newChannelId = res.data.newChannel._id;
-
-
             const updatedUser = {
                 ...user,
                 channels: user.channels ? [...user.channels, newChannelId] : [newChannelId]
@@ -46,13 +42,13 @@ const CreateChannel = () => {
     return (
         <div className="flex flex-col items-center justify-center min-h-[80vh] px-4">
             <div className="bg-white p-8 rounded-2xl shadow-xl border w-full max-w-md">
-                <h1 className="lg:text-3xl text-2xl font-bold mb-6 text-center">Setup Your Channel</h1>
+                <h1 className="lg:text-2xl text-2xl font-bold mb-6 text-center">Setup Your Channel</h1>
                 <form onSubmit={handleCreate} className="flex flex-col gap-4">
                     <div>
                         <label className="lg:text-lg text-sm font-semibold text-gray-600">Channel Name</label>
                         <input
                             type="text" required
-                            className="lg:text-lg w-full border p-2 rounded-lg mt-1 outline-blue-500"
+                            className="lg:text-md w-full border p-2 rounded-lg mt-1 outline-blue-500"
                             value={channelName}
                             onChange={(e) => setChannelName(e.target.value)}
                         />
@@ -61,7 +57,7 @@ const CreateChannel = () => {
                         <label className="lg:text-lg text-sm font-semibold text-gray-600">Description</label>
                         <textarea
                             required rows="4"
-                            className="lg:text-lg w-full border p-2 rounded-lg mt-1 outline-blue-500"
+                            className="lg:text-md w-full border p-2 rounded-lg mt-1 outline-blue-500"
                             value={description}
                             onChange={(e) => setDescription(e.target.value)}
                         ></textarea>
