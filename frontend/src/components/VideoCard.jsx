@@ -70,9 +70,9 @@ function VideoCard({ video, isOwner, refreshVideos }) {
             className="w-10  ml-1 rounded-full object-cover h-10"
           />
           <div className="flex flex-col flex-1">
-            <h1 className="font-semibold text-md sm:text-base md:text-md lg:text-xl md:line-clamp-1  lg:line-clamp-1 line-clamp-2">{video.title}</h1>
-            <span className="text-gray-700 text-sm md:text-md  lg:text-lg ">{video.channel?.channelName}</span>
-            <span className="text-gray-700 text-sm  md:text-md lg:text-lg"> {video.views} views • {video.category}</span>
+            <h1 className="font-semibold text-md sm:text-base md:text-md lg:text-md md:line-clamp-1  lg:line-clamp-1 line-clamp-2">{video.title}</h1>
+            <span className="text-gray-700 text-sm md:text-sm lg:text-md ">{video.channel?.channelName}</span>
+            <span className="text-gray-700 text-sm  md:text-sm lg:text-md"> {video.views} views • {video.category}</span>
           </div>
 
           
