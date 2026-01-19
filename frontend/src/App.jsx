@@ -29,7 +29,7 @@ const App = () => {
 
         {/* SIDEBAR  */}
         {isSidebarOpen && (
-          <aside className=" lg:mt-3 md:w-50  lg:w-64 sticky top-16 h-[calc(100vh-64px)] overflow-y-auto bg-white ">
+          <aside className="hidden lg:block lg:mt-3 md:w-50  lg:w-64 sticky top-16 h-[calc(100vh-64px)] overflow-y-auto bg-gray-100 ">
             <nav className=" flex flex-col gap-1 p-2">
               <button
                 onClick={() => navigate("/")}
@@ -37,28 +37,28 @@ const App = () => {
               >
                 🏠︎ Home
               </button>
-              <button className=" md:text-lg lg:text-xl hover:bg-gray-100 flex items-center gap-4 p-3 text-gray-800 cursor-default">
+              <button className=" md:text-md lg:text-md hover:bg-gray-100 flex items-center gap-4 p-3 text-gray-800 cursor-default">
                 🗀 Subscriptions
               </button>
-              <button className=" md:text-lg lg:text-xl  hover:bg-gray-100 flex items-center gap-4 p-3 text-gray-800 cursor-default">
+              <button className=" md:text-md lg:text-md  hover:bg-gray-100 flex items-center gap-4 p-3 text-gray-800 cursor-default">
                 ◴ History
               </button>
-              <button className="md:text-lg lg:text-xl  hover:bg-gray-100 flex items-center gap-4 p-3 text-gray-800 cursor-default">
+              <button className="md:text-md lg:text-md   hover:bg-gray-100 flex items-center gap-4 p-3 text-gray-800 cursor-default">
                 Subsciptions
               </button>
-              <button className="md:text-lg lg:text-xl  hover:bg-gray-100 flex items-center gap-4 p-3 text-gray-800 cursor-default">
+              <button className="md:text-md lg:text-md   hover:bg-gray-100 flex items-center gap-4 p-3 text-gray-800 cursor-default">
                 Shorts
               </button>
-              <button className=" md:text-lg lg:text-xl   hover:bg-gray-100 flex items-center gap-4 p-3 text-gray-800 cursor-default">
+              <button className=" md:text-md lg:text-md    hover:bg-gray-100 flex items-center gap-4 p-3 text-gray-800 cursor-default">
                 Playlist
               </button>
-              <button className=" md:text-lg lg:text-xl  hover:bg-gray-100 flex items-center gap-4 p-3 text-gray-800 cursor-default">
+              <button className=" md:text-md lg:text-md   hover:bg-gray-100 flex items-center gap-4 p-3 text-gray-800 cursor-default">
                 Watch later
               </button>
-              <button className=" md:text-lg lg:text-xl   hover:bg-gray-100 flex items-center gap-4 p-3 text-gray-800 cursor-default">
+              <button className=" md:text-md lg:text-md    hover:bg-gray-100 flex items-center gap-4 p-3 text-gray-800 cursor-default">
                 Liked Videos
               </button>
-              <button className="md:text-lg lg:text-xl  hover:bg-gray-100 flex items-center gap-4 p-3 text-gray-800 cursor-default">
+              <button className="md:text-md lg:text-md   hover:bg-gray-100 flex items-center gap-4 p-3 text-gray-800 cursor-default">
                 Music
               </button>
             </nav>
