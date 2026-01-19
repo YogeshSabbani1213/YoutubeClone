@@ -148,7 +148,5 @@ npm run dev
 ---
 
 ## Author
-
-Your Name
 Yogesh Sabbani
 
