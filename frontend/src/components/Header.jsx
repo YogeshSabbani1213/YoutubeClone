@@ -31,7 +31,7 @@ function Header({ setSearchText, isSidebarOpen, setIsSidebarOpen }) {
           <div className="  flex items-center gap-2 md:gap-4">
             {/* Hamburger  */}
             <button
-              onClick={() => setIsSidebarOpen(!isSidebarOpen)} 
+              onClick={() => setIsSidebarOpen(!isSidebarOpen)}
               className="hidden lg:flex items-center justify-center text-2xl"
             >
               ☰
@@ -41,7 +41,7 @@ function Header({ setSearchText, isSidebarOpen, setIsSidebarOpen }) {
               <img
                 src="https://demo-mern-youtube-clone.vercel.app/logo_black.png"
                 alt="Logo"
-                className="h-10 md:h-12 lg:h-16 object-contain"
+                className="h-10 md:h-12 lg:h-14 object-contain"
               />
             </div>
           </div>
@@ -57,7 +57,7 @@ function Header({ setSearchText, isSidebarOpen, setIsSidebarOpen }) {
               type="text"
               placeholder="Search"
               onChange={(e) => setSearchText(e.target.value)}
-              className="bg-transparent text-sm md:text-lg lg:text-xl  outline-none flex-1 p-1"
+              className="bg-transparent text-sm md:text-md lg:text-md  outline-none flex-1 p-1"
             />
             <button className="pl-2 border-l border-gray-300">
               <img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="search" className="w-4 h-4 lg:w-6 lg:h-6" />
@@ -73,21 +73,56 @@ function Header({ setSearchText, isSidebarOpen, setIsSidebarOpen }) {
             </button>
 
             {!user ? (
-              <button onClick={() => setAuthView("login")} className="border px-4 py-1 rounded-full text-sm md:text-lg lg:text-xl font-medium hover:bg-blue-50">
+              <button onClick={() => setAuthView("login")} className="border px-4 py-1 rounded-full text-sm md:text-md lg:text-md font-medium hover:bg-blue-50">
                 Login
               </button>
             ) : (
-              <div className="flex items-center gap-2 sm:gap-4">
+              <div className=" flex items-center px-2 py-1 gap-2 sm:gap-3">
+
+                {/* Avatar + Channel */}
                 <div
                   onClick={handleAvatarClick}
-                  className="w-8 h-8 md:w-10 md:h-10 lg:w-11 lg:h-11 rounded-full bg-purple-600 flex items-center justify-center text-white text-sm md:text-xl lg:text-2xl cursor-pointer hover:ring-2 hover:ring-purple-300 transition-all font-semibold"
+                  className="flex items-center gap-1.5 sm:gap-2 cursor-pointer
+               hover:bg-gray-100 rounded-md px-1 sm:px-2 transition"
                 >
-                  {user.username?.charAt(0).toUpperCase()}
+                  {/* Avatar */}
+                  <div
+                    className="relative w-8 h-8 sm:w-9 sm:h-9
+                 rounded-full bg-purple-600 
+                 flex items-center justify-center
+                 text-white text-sm sm:text-base font-semibold
+                 hover:ring-2 hover:ring-purple-300 transition-all"
+                  >
+                    {user.username?.charAt(0).toUpperCase()}
+
+                    {/* Badge fr mobile */}
+                    <span className="absolute -bottom-1 -right-1 sm:hidden
+                       text-black  text-[10px]
+                       px-1 rounded-full bg-white">
+                      Ch
+                    </span>
+                  </div>
+
+                  {/* Channel Text */}
+                  <h6 className="hidden sm:block text-xs sm:text-sm font-medium text-gray-700 whitespace-nowrap">
+                    Channel
+                  </h6>
                 </div>
-                <button className=" text-sm md:text-xl lg:text-2xl text-red-500 font-medium" onClick={logout}>
+
+                
+                <span className="hidden md:block h-5 w-px bg-gray-300"></span>
+
+                {/* Logout */}
+                <button
+                  onClick={logout}
+                  className="text-xs sm:text-sm md:text-base
+               text-red-500 font-medium hover:underline"
+                >
                   Logout
                 </button>
               </div>
+
+
             )}
           </div>
         )}
