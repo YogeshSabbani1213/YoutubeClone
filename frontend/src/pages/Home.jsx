@@ -15,8 +15,8 @@ function Home() {
       try {
         const url =
           category === "All"
-            ? "http://localhost:8080/api/videos"
-            : `http://localhost:8080/api/videos?category=${category}`;
+            ? "https://youtubeclone-1-k34c.onrender.com/api/videos"
+            : `https://youtubeclone-1-k34c.onrender.com/api/videos?category=${category}`;
         const response = await fetch(url);
         const data = await response.json();
         setVideos(data);

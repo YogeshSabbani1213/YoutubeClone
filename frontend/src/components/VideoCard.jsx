@@ -24,7 +24,7 @@ function VideoCard({ video, isOwner, refreshVideos }) {
     if (window.confirm("Are you sure you want to delete this video?")) {
       try {
         const token = localStorage.getItem('token');
-        await axios.delete(`http://localhost:8080/api/videos/${video._id}`, {
+        await axios.delete(`https://youtubeclone-1-k34c.onrender.com/api/videos/${video._id}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         toast.error("Video deleted", {

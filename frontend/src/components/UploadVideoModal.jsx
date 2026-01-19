@@ -15,7 +15,7 @@ const UploadVideoModal = ({ channelId, setOpen, refreshVideos }) => {
         e.preventDefault();
         try {
             const token = localStorage.getItem('token');
-            await axios.post('http://localhost:8080/api/videos/createOwnVideo', {
+            await axios.post('https://youtubeclone-1-k34c.onrender.com/api/videos/createOwnVideo', {
                 ...videoData,
 
             }, {

@@ -14,7 +14,7 @@ const CreateChannel = () => {
         e.preventDefault();
         try {
             const token = localStorage.getItem('token');
-            const res = await axios.post('http://localhost:8080/api/channel/create', {
+            const res = await axios.post('https://youtubeclone-1-k34c.onrender.com/api/channel/create', {
                 channelName,
                 description,
                 owner: user._id

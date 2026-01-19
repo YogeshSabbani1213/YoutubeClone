@@ -21,7 +21,7 @@ function ChannelPage() {
             setErr(null);
 
             // Fetch Channel Info 
-            const response = await axios.get(`http://localhost:8080/api/channel/${id}`);
+            const response = await axios.get(`https://youtubeclone-1-k34c.onrender.com/api/channel/${id}`);
 
             //  Extract data from the response
             const channelData = response.data.channel;

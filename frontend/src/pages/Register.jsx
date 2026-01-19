@@ -9,7 +9,7 @@ function Register({ setAuthView }) {
   async function handleRegister(e) {
     e.preventDefault();
     try{
-      const response = await fetch("http://localhost:8080/api/auth/register", {
+      const response = await fetch("https://youtubeclone-1-k34c.onrender.com/api/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

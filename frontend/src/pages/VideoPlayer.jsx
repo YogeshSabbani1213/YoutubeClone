@@ -28,7 +28,7 @@ function VideoPlayer() {
   useEffect(() => {
     async function fetchVideo() {
       try {
-        const response = await fetch(`http://localhost:8080/api/videos/${id}`);
+        const response = await fetch(`https://youtubeclone-1-k34c.onrender.com/api/videos/${id}`);
         if (!response.ok) throw new Error("Video not found");
         const data = await response.json();
         setVideo(data);
@@ -41,7 +41,7 @@ function VideoPlayer() {
     }
     async function fetchAllVideos() {
       try {
-        const response = await fetch(`http://localhost:8080/api/videos`); 
+        const response = await fetch(`https://youtubeclone-1-k34c.onrender.com/api/videos`); 
         const data = await response.json();
         
         setRecommendations(data.filter(v => v._id !== id));
@@ -50,7 +50,7 @@ function VideoPlayer() {
     fetchAllVideos();
     fetchVideo();
     async function fetchComments() {
-      const response = await fetch(`http://localhost:8080/api/comments/${id}`);
+      const response = await fetch(`https://youtubeclone-1-k34c.onrender.com/api/comments/${id}`);
       const data = await response.json();
       setComments(data);
     }
@@ -66,7 +66,7 @@ function VideoPlayer() {
       return;
     }
     const loadingToast = toast.loading("Posting comment...");
-    const res = await fetch(`http://localhost:8080/api/comments/${id}`, {
+    const res = await fetch(`https://youtubeclone-1-k34c.onrender.com/api/comments/${id}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -93,7 +93,7 @@ function VideoPlayer() {
       toast.error("Comment cannot be empty");
       return;
     }
-    fetch(`http://localhost:8080/api/comments/${commentId}`, {
+    fetch(`https://youtubeclone-1-k34c.onrender.com/api/comments/${commentId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -114,7 +114,7 @@ function VideoPlayer() {
   function deleteComment(commentId) {
     if (!window.confirm("Delete this comment?")) return;
 
-    fetch(`http://localhost:8080/api/comments/${commentId}`, {
+    fetch(`https://youtubeclone-1-k34c.onrender.com/api/comments/${commentId}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -129,7 +129,7 @@ function VideoPlayer() {
   async function handleLike() {
     if (!user) return toast.error("Login to like");
 
-    const res = await fetch(`http://localhost:8080/api/videos/${id}/like`, {
+    const res = await fetch(`https://youtubeclone-1-k34c.onrender.com/api/videos/${id}/like`, {
       method: "PUT",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -146,7 +146,7 @@ function VideoPlayer() {
   async function handleDislike() {
     if (!user) return toast.error("Login to dislike");
 
-    const res = await fetch(`http://localhost:8080/api/videos/${id}/dislike`, {
+    const res = await fetch(`https://youtubeclone-1-k34c.onrender.com/api/videos/${id}/dislike`, {
       method: "PUT",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
